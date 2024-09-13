@@ -1,0 +1,99 @@
+{% load static tailwind_tags user_agents %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velocidad de lectura</title>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    {% tailwind_css %}
+  </head>
+  <body>
+    <nav class="flex items-center justify-center flex-wrap bg-teal-500 p-6">
+      {% if request|is_pc or request|is_tablet %}
+        <img src="{% static '/images/logo.png' %}" alt="milogo" id="milogo" width="300">
+        <img src="{% static '/images/tomateTiempo.jpeg' %}" alt="milogo" id="milogo" width="250">
+      {% else %}
+      <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
+        Velocidad de lectura
+        <i class="fa-solid fa-clock fa-xs"></i>
+      </h1>
+      {% endif %}
+    </nav>
+    <br />
+    {% block content %}
+
+    <div class="container mx-auto">
+        <br />
+
+        <div class="max-w-sm rounded-lg border-solid border-4 border-indigo-600 bg-sky-300 p-5 mx-auto"
+        >
+        <div class="mb-5">
+          <label
+            for="numText"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+          <i class="fas fa-file-alt"></i> Número de palabra de texto:
+          </label>
+          <input
+            type="number"
+            id="numText"
+            name="numText"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="numTiempo"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+          <i class="fas fa-stopwatch"></i> Tiempo empleado en segundos:
+          </label>
+          <input
+            type="number"
+            id="numTiempo"
+            name="numTiempo"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div class="flex items-center justify-center">
+            <button type="button"
+            onclick="totales()"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                <i class="fas fa-calculator"></i> Calcular de PM
+            </button>
+
+            <button type="button"
+            onclick="limpieza()"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <i class="fa-solid fa-recycle"></i> Limpiar
+            </button>
+        </div>
+        
+      </div>
+
+        <br>
+      
+        <p class="text-4xl font-bold text-gray-900 dark:text-white text-center" id="total"></p>    
+    </div>
+
+    {% endblock %}
+
+    <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2020 - {% now "Y" %} <a href="https://flowbite.com/" class="hover:underline">Velocidad de lectura</a>.
+        </span>
+
+        <p>
+          Creado: Nelson Mouat Vergara <i class="fa-solid fa-heart" style="color: #74C0FC;"></i>
+        </p>
+    </footer>
+
+    <script src="{% static "/js/script.js" %}"></script>
+  </body>
+</html>
