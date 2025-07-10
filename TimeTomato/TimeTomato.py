@@ -7,18 +7,21 @@ class NumeroVelocidad(rx.State):
 def index() -> rx.Component:
     return rx.container(
         rx.vstack(
-            rx.center(
-                rx.image(src="/images/logo.png", alt="logo de timetomato", height="auto"),
-                class_name="bg-linear-to-r from-cyan-500 to-blue-400",
-                border_radius="15px",
-                border_width="medium",
-                width="50%",
-            ),
-            rx.center(
-                rx.image(src="/images/tomateTiempo.jpeg", alt="logo de timetomato", height="auto"),
-                class_name="shadow-xl/20",
-                border_width="medium",
-                width="30%",
+            rx.vstack(
+                rx.center(
+                    rx.image(src="/images/logo.png", alt="logo de timetomato", height="auto"),
+                    class_name="bg-linear-to-r from-cyan-500 to-blue-400",
+                    border_radius="15px",
+                    border_width="medium",
+                    width="50%",
+                ),
+                rx.center(
+                    rx.image(src="/images/tomateTiempo.jpeg", alt="logo de timetomato", height="auto"),
+                    class_name="shadow-xl/20",
+                    border_width="medium",
+                    width="30%",
+                ),
+                align="center",
             ),
             
             #Número de palabras
@@ -53,7 +56,6 @@ def index() -> rx.Component:
             ),
             
             spacing="4",
-            align="center",
         ),
         class_name="bg-blue-500",
     ),
