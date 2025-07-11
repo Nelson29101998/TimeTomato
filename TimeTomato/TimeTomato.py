@@ -2,7 +2,19 @@ import reflex as rx
 
 
 class NumeroVelocidad(rx.State):
-    numeroPalabra: int = 0
+    numeroPalabra: str = ""
+    tiempoEmpleado: str = ""
+
+    totalTomato: float = 0.0
+
+    @rx.event
+    def calcTomato(self):
+        if not self.numeroPalabra or not self.tiempoEmpleado:
+            return print("Por favor, ingresa los valores requeridos.")
+        else:
+            self.totalTomato = (float(self.numeroPalabra) /
+                            float(self.tiempoEmpleado)) * 60
+        # return print("Calculando velocidad de lectura...", self.totalTomato)
 
 
 @rx.page(route="/", title="Velocidad de lectura")
@@ -28,13 +40,22 @@ def index() -> rx.Component:
                     ),
                     align="center",
                 ),
+                spacing="4",
+            ),
+        ),
 
+        rx.container(
+            rx.vstack(
                 # Número de palabras
                 rx.hstack(
                     rx.heading("Número de palabra de texto:"),
                     rx.input(
+                        type="number",
                         placeholder="Ingresa los números...",
                         border_radius="10px",
+                        required=True,
+                        on_blur=NumeroVelocidad.set_numeroPalabra,
+                        
                     ),
                 ),
 
@@ -42,14 +63,17 @@ def index() -> rx.Component:
                 rx.hstack(
                     rx.heading("Tiempo empleado en segundos:"),
                     rx.input(
+                        type="number",
                         placeholder="Ingresa los tiempo...",
                         border_radius="10px",
+                        required=True,
+                        on_blur=NumeroVelocidad.set_tiempoEmpleado,
                     ),
                 ),
-
                 spacing="4",
             ),
         ),
+
         rx.container(
             rx.vstack(
                 rx.hstack(
@@ -57,6 +81,7 @@ def index() -> rx.Component:
                     rx.button(
                         "Calcular de PM",
                         class_name="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
+                        on_click=NumeroVelocidad.calcTomato,
                     ),
                     rx.button(
                         "Limpiar",
@@ -64,11 +89,13 @@ def index() -> rx.Component:
                     ),
                 ),
 
-                rx.text(
-                    "Get started by editing ",
-
-                    size="5",
+                rx.hstack(
+                    rx.text(
+                        "Total de PM es: ", NumeroVelocidad.totalTomato, " palabras por minuto",
+                        size="5",
+                    ),
                 ),
+
                 spacing="2",
                 align="center",
             ),
