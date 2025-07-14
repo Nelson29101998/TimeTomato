@@ -7,14 +7,24 @@ class NumeroVelocidad(rx.State):
 
     totalTomato: float = 0.0
 
+    numVisible: bool = False
+
     @rx.event
-    def calcTomato(self):
+    async def calcTomato(self):
         if not self.numeroPalabra or not self.tiempoEmpleado:
-            return print("Por favor, ingresa los valores requeridos.")
+            self.numVisible = False
+            yield rx.toast.warning("Por favor, ingresa los valores requeridos.",
+                                   position="top-right",
+                                   )
+            # return print("Por favor, ingresa los valores requeridos.")
         else:
+            self.numVisible = True
             self.totalTomato = (float(self.numeroPalabra) /
-                            float(self.tiempoEmpleado)) * 60
+                                float(self.tiempoEmpleado)) * 60
         # return print("Calculando velocidad de lectura...", self.totalTomato)
+        
+    
+    
 
 
 @rx.page(route="/", title="Velocidad de lectura")
@@ -55,7 +65,7 @@ def index() -> rx.Component:
                         border_radius="10px",
                         required=True,
                         on_blur=NumeroVelocidad.set_numeroPalabra,
-                        
+
                     ),
                 ),
 
@@ -90,9 +100,13 @@ def index() -> rx.Component:
                 ),
 
                 rx.hstack(
-                    rx.text(
-                        "Total de PM es: ", NumeroVelocidad.totalTomato, " palabras por minuto",
-                        size="5",
+                    rx.cond(
+                        NumeroVelocidad.numVisible,
+                        rx.text(
+                            "Total de PM es: ", NumeroVelocidad.totalTomato, " palabras por minuto",
+                            size="5",
+                        ),
+                        rx.divider(),
                     ),
                 ),
 
