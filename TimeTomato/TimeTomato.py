@@ -16,15 +16,20 @@ class NumeroVelocidad(rx.State):
             yield rx.toast.warning("Por favor, ingresa los valores requeridos.",
                                    position="top-right",
                                    )
-            # return print("Por favor, ingresa los valores requeridos.")
         else:
             self.numVisible = True
             self.totalTomato = (float(self.numeroPalabra) /
                                 float(self.tiempoEmpleado)) * 60
-        # return print("Calculando velocidad de lectura...", self.totalTomato)
-        
-    
-    
+
+    @rx.event
+    async def limpiar(self):
+        self.numeroPalabra = ""
+        self.tiempoEmpleado = ""
+        self.totalTomato = 0.0
+        self.numVisible = False
+        yield rx.toast.info("Valores limpiados correctamente.",
+                            position="top-right",
+                            )
 
 
 @rx.page(route="/", title="Velocidad de lectura")
@@ -63,9 +68,8 @@ def index() -> rx.Component:
                         type="number",
                         placeholder="Ingresa los números...",
                         border_radius="10px",
-                        required=True,
-                        on_blur=NumeroVelocidad.set_numeroPalabra,
-
+                        value=NumeroVelocidad.numeroPalabra,
+                        on_change=NumeroVelocidad.set_numeroPalabra,
                     ),
                 ),
 
@@ -76,8 +80,8 @@ def index() -> rx.Component:
                         type="number",
                         placeholder="Ingresa los tiempo...",
                         border_radius="10px",
-                        required=True,
-                        on_blur=NumeroVelocidad.set_tiempoEmpleado,
+                        value=NumeroVelocidad.tiempoEmpleado,
+                        on_change=NumeroVelocidad.set_tiempoEmpleado,
                     ),
                 ),
                 spacing="4",
@@ -96,6 +100,7 @@ def index() -> rx.Component:
                     rx.button(
                         "Limpiar",
                         class_name="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
+                        on_click=NumeroVelocidad.limpiar,
                     ),
                 ),
 
