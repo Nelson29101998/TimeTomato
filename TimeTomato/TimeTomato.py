@@ -119,9 +119,13 @@ def index() -> rx.Component:
                 align="center",
             ),
         ),
-        class_name="bg-blue-500",
+        # class_name="bg-blue-500",
+        bg="var(--primary-color)",
+        width="100%",
     ),
 
 
-app = rx.App()
+app = rx.App(
+    stylesheets=["/css/styles.scss"],
+)
 app.add_page(index)
