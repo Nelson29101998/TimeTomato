@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterable, Mapping, Sequence
-from typing import Any, overload
+from collections.abc import Sequence
+from typing import overload
 
 from rich.console import Console
 
@@ -44,20 +44,26 @@ def print(msg: str, **kwargs):
 
 
 def print_table(
-    tabular_data: Mapping[Any, Iterable[Any]] | Iterable[Iterable[Any]],
-    headers: str | dict[str, str] | Sequence[str] = (),
-    **kwargs,
+    tabular_data: list[list[str]],
+    headers: Sequence[str] = (),
 ) -> None:
     """Print a table to the console.
 
     Args:
         tabular_data: The data to print in tabular format.
         headers: The headers for the table.
-        **kwargs: Additional keyword arguments to pass to the tabulate function.
     """
-    from tabulate import tabulate
+    from rich.table import Table
 
-    print(tabulate(tabular_data, headers=headers, **kwargs))
+    table = Table()
+
+    for column in headers:
+        table.add_column(column)
+
+    for row in tabular_data:
+        table.add_row(*row)
+
+    _console.print(table)
 
 
 def debug(msg: str, **kwargs):
