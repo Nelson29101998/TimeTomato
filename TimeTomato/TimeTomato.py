@@ -112,6 +112,7 @@ def index() -> rx.Component:
                             NumeroVelocidad.numVisible,
                             rx.text(
                                 "Total de PM es: ", NumeroVelocidad.totalTomato, " palabras por minuto",
+                                class_name="text-2xl font-bold text-gray-900 dark:text-white",
                                 size="5",
                             ),
                             rx.divider(),
