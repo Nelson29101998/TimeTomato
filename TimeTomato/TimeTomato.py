@@ -65,25 +65,31 @@ def index() -> rx.Component:
                     # Número de palabras
                     rx.vstack(
                         rx.heading("Número de palabra de texto:"),
-                        rx.input(
-                            type="number",
-                            placeholder="Ingresa los números...",
-                            border_radius="10px",
-                            value=NumeroVelocidad.numeroPalabra,
-                            on_change=NumeroVelocidad.set_numeroPalabra,
+                        rx.hstack(
+                            rx.icon("book-open-text"),
+                            rx.input(
+                                type="number",
+                                placeholder="Ingresa los números...",
+                                border_radius="10px",
+                                value=NumeroVelocidad.numeroPalabra,
+                                on_change=NumeroVelocidad.set_numeroPalabra,
+                            ),
+                            class_name="fas fa-file-alt",
                         ),
-                        class_name="fas fa-file-alt",
                     ),
 
                     # Tiempo empleado
                     rx.vstack(
                         rx.heading("Tiempo empleado en segundos:"),
-                        rx.input(
-                            type="number",
-                            placeholder="Ingresa los tiempo...",
-                            border_radius="10px",
-                            value=NumeroVelocidad.tiempoEmpleado,
-                            on_change=NumeroVelocidad.set_tiempoEmpleado,
+                        rx.hstack(
+                            rx.icon("clock-fading"),
+                            rx.input(
+                                type="number",
+                                placeholder="Ingresa los tiempo...",
+                                border_radius="10px",
+                                value=NumeroVelocidad.tiempoEmpleado,
+                                on_change=NumeroVelocidad.set_tiempoEmpleado,
+                            ),
                         ),
                         class_name="fas fa-file-alt",
                     ),
@@ -94,16 +100,18 @@ def index() -> rx.Component:
             rx.container(
                 rx.vstack(
                     rx.hstack(
-                        # Para calcular la velocidad de lectura
-                        rx.button(
-                            "Calcular de PM",
-                            class_name="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
-                            on_click=NumeroVelocidad.calcTomato,
-                        ),
-                        rx.button(
-                            "Limpiar",
-                            class_name="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
-                            on_click=NumeroVelocidad.limpiar,
+                        rx.center(
+                            # Para calcular la velocidad de lectura
+                            rx.button(
+                                rx.icon("calculator"), "Calcular de PM",
+                                class_name="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
+                                on_click=NumeroVelocidad.calcTomato,
+                            ),
+                            rx.button(
+                                rx.icon("brush-cleaning"), "Limpiar",
+                                class_name="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
+                                on_click=NumeroVelocidad.limpiar,
+                            ),
                         ),
                     ),
 
