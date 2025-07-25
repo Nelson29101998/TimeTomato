@@ -1,5 +1,6 @@
 import reflex as rx
 from .ordenarPagina.arribaAbajo import Ventanas
+from . import pages
 
 class NumeroVelocidad(rx.State):
     numeroPalabra: str = ""
@@ -144,3 +145,4 @@ app = rx.App(
     stylesheets=["/css/styles.scss"],
 )
 app.add_page(index)
+app.add_page(pages.AcercaDe, route="/acercade", title="Acerca de")
