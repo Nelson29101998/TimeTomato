@@ -1,12 +1,5 @@
 import reflex as rx
-from datetime import datetime, timezone
-
-class MomentState(rx.State):
-    date_now: datetime = datetime.now(timezone.utc)
-
-    @rx.event
-    def update(self):
-        self.date_now = datetime.now(timezone.utc)
+from .ordenarPagina.arribaAbajo import Ventanas
 
 class NumeroVelocidad(rx.State):
     numeroPalabra: str = ""
@@ -39,26 +32,9 @@ class NumeroVelocidad(rx.State):
                             )
 
 
-def footer() -> rx.Component:
-    return rx.box(
-        rx.text("Creado: Nelson Mouat Vergara"),
-        rx.box(
-            rx.text("© 2020 - ",
-                    rx.moment(MomentState.date_now, format="YYYY"), " ",
-                    rx.link("Velocidad de lectura",
-                            href="https://timetomato-teal-book.reflex.run"),
-                    ),
-            class_name="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-        ),
-        class_name="bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600",
-        width="100%",
-        padding="1em",
-    )
-
-
 @rx.page(route="/", title="Velocidad de lectura")
 def index() -> rx.Component:
-    return rx.box(
+    return Ventanas.navbar(), rx.box(
         rx.container(
             rx.container(
                 rx.vstack(
@@ -161,7 +137,7 @@ def index() -> rx.Component:
         ),
         class_name="flex items-center justify-center flex-wrap bg-teal-500 p-6",
         width="100%",
-    ), footer(),
+    ), Ventanas.footer(),
 
 
 app = rx.App(
