@@ -147,4 +147,4 @@ app = rx.App(
     stylesheets=["/css/styles.scss"],
 )
 app.add_page(index)
-app.add_page(pages.AcercaDe, route="/acercade", title="Acerca de")
+app.add_page(pages.AcercaDe)
