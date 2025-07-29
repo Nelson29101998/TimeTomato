@@ -1,7 +1,6 @@
 import reflex as rx
 from .components.navUp import VentanasNav
 from .components.footerDown import VentanasFooter
-
 from . import pages
 
 class NumeroVelocidad(rx.State):
