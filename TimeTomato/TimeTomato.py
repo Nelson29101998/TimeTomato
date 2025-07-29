@@ -1,5 +1,7 @@
 import reflex as rx
-from .ordenarPagina.arribaAbajo import Ventanas
+from .components.navUp import VentanasNav
+from .components.footerDown import VentanasFooter
+
 from . import pages
 
 class NumeroVelocidad(rx.State):
@@ -35,7 +37,7 @@ class NumeroVelocidad(rx.State):
 
 @rx.page(route="/", title="Velocidad de lectura")
 def index() -> rx.Component:
-    return Ventanas.navbar(), rx.box(
+    return VentanasNav.navbar(), rx.box(
         rx.container(
             rx.container(
                 rx.vstack(
@@ -138,7 +140,7 @@ def index() -> rx.Component:
         ),
         class_name="flex items-center justify-center flex-wrap bg-teal-500 p-6",
         width="100%",
-    ), Ventanas.footer(),
+    ), VentanasFooter.footer(),
 
 
 app = rx.App(

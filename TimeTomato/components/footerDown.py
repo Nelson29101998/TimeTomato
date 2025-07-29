@@ -7,20 +7,8 @@ class MomentState(rx.State):
     @rx.event
     def update(self):
         self.date_now = datetime.now(timezone.utc)
-
-
-class Ventanas(rx.Component):
-    def navbar() -> rx.Component:
-        return rx.box(
-            rx.flex(
-                rx.link("Inicio", href="/", class_name="text-lg font-bold"),
-                rx.link("Acerca de", href="/acercade", class_name="text-lg font-bold"),
-                spacing="2",
-            ),
-            width="100%",
-            padding="1em",
-        )
-
+        
+class VentanasFooter(rx.Component):
     def footer() -> rx.Component:
         return rx.box(
             rx.text("Creado: Nelson Mouat Vergara"),
