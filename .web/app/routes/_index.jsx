@@ -12,6 +12,23 @@ import { jsx } from "@emotion/react"
 const Moment = ClientSide(lazy(() => import('react-moment')))
 
 
+function Debounceinput_3690120168595268452071926947729633368 () {
+  
+  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  const on_change_fbe0f943aafa40fcb06f643a448fb628 = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.set_tiempoEmpleado", ({ ["value"] : _e["target"]["value"] }), ({  })))], [_e], ({  })))), [addEvents, Event])
+
+
+
+  
+  return (
+    jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_fbe0f943aafa40fcb06f643a448fb628,placeholder:"Ingresa los tiempo...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.tiempoEmpleado_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.tiempoEmpleado_rx_state_ : "")},)
+
+  )
+}
+
 function Moment_235933936650578221533984834988403289858 () {
   
   const reflex___state____state__time_tomato___components___footer_down____moment_state = useContext(StateContexts.reflex___state____state__time_tomato___components___footer_down____moment_state)
@@ -30,12 +47,12 @@ reflex___state____state__time_tomato___components___footer_down____moment_state.
   )
 }
 
-function Button_168819098048397515650389194883742876686 () {
+function Button_148675033439856330813843604268037391211 () {
   
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
 
-  const on_click_782db8e8c5d5b8dab9a72b179b40e4bb = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.limpiar", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
+  const on_click_95307ee4ebaabb0c4173c9e3b08a1d5f = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.calcTomato", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
 
 
 
@@ -43,27 +60,10 @@ function Button_168819098048397515650389194883742876686 () {
   return (
     jsx(
 RadixThemesButton,
-{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_782db8e8c5d5b8dab9a72b179b40e4bb},
-jsx(LucideBrushCleaning,{},)
-,"Limpiar"
+{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_95307ee4ebaabb0c4173c9e3b08a1d5f},
+jsx(LucideCalculator,{},)
+,"Calcular de PM"
 ,)
-  )
-}
-
-function Debounceinput_320282388889533641019839164278055734316 () {
-  
-  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  const on_change_83c429918e6fd1767340a1fabcb6e4a8 = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.set_numeroPalabra", ({ ["value"] : _e["target"]["value"] }), ({  })))], [_e], ({  })))), [addEvents, Event])
-
-
-
-  
-  return (
-    jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_83c429918e6fd1767340a1fabcb6e4a8,placeholder:"Ingresa los n\u00fameros...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_ : "")},)
-
   )
 }
 
@@ -92,6 +92,23 @@ jsx(RadixThemesSeparator,{size:"4"},)
   )
 }
 
+function Debounceinput_320282388889533641019839164278055734316 () {
+  
+  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  const on_change_83c429918e6fd1767340a1fabcb6e4a8 = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.set_numeroPalabra", ({ ["value"] : _e["target"]["value"] }), ({  })))], [_e], ({  })))), [addEvents, Event])
+
+
+
+  
+  return (
+    jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_83c429918e6fd1767340a1fabcb6e4a8,placeholder:"Ingresa los n\u00fameros...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_ : "")},)
+
+  )
+}
+
 function Text_126231349361336532617190520851657233133 () {
   
   const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
@@ -112,12 +129,12 @@ RadixThemesText,
   )
 }
 
-function Button_148675033439856330813843604268037391211 () {
+function Button_168819098048397515650389194883742876686 () {
   
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
 
-  const on_click_95307ee4ebaabb0c4173c9e3b08a1d5f = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.calcTomato", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
+  const on_click_782db8e8c5d5b8dab9a72b179b40e4bb = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.limpiar", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
 
 
 
@@ -125,27 +142,10 @@ function Button_148675033439856330813843604268037391211 () {
   return (
     jsx(
 RadixThemesButton,
-{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_95307ee4ebaabb0c4173c9e3b08a1d5f},
-jsx(LucideCalculator,{},)
-,"Calcular de PM"
+{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_782db8e8c5d5b8dab9a72b179b40e4bb},
+jsx(LucideBrushCleaning,{},)
+,"Limpiar"
 ,)
-  )
-}
-
-function Debounceinput_3690120168595268452071926947729633368 () {
-  
-  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  const on_change_fbe0f943aafa40fcb06f643a448fb628 = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.set_tiempoEmpleado", ({ ["value"] : _e["target"]["value"] }), ({  })))], [_e], ({  })))), [addEvents, Event])
-
-
-
-  
-  return (
-    jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_fbe0f943aafa40fcb06f643a448fb628,placeholder:"Ingresa los tiempo...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.tiempoEmpleado_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.tiempoEmpleado_rx_state_ : "")},)
-
   )
 }
 
