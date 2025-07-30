@@ -12,7 +12,7 @@ import { jsx } from "@emotion/react"
 
 
 
-function Text_126231349361336532617190520851657233133 () {
+function Fragment_167616900843178496352053926726151677768 () {
   
   const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
 
@@ -23,12 +23,17 @@ function Text_126231349361336532617190520851657233133 () {
   
   return (
     jsx(
-RadixThemesText,
-{as:"p",className:"text-2xl font-bold text-gray-900 dark:text-white",size:"5"},
-"Total de PM es: "
-,reflex___state____state__time_tomato____time_tomato____numero_velocidad.totalTomato_rx_state_
-," palabras por minuto"
-,)
+Fragment,
+{},
+(reflex___state____state__time_tomato____time_tomato____numero_velocidad.numVisible_rx_state_ ? (jsx(
+Fragment,
+{},
+jsx(Text_126231349361336532617190520851657233133,{},)
+,)) : (jsx(
+Fragment,
+{},
+jsx(RadixThemesSeparator,{size:"4"},)
+,))),)
   )
 }
 
@@ -49,22 +54,22 @@ function Debounceinput_3690120168595268452071926947729633368 () {
   )
 }
 
-function Button_148675033439856330813843604268037391211 () {
+function Text_126231349361336532617190520851657233133 () {
   
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
+  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
 
 
-  const on_click_95307ee4ebaabb0c4173c9e3b08a1d5f = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.calcTomato", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
 
 
 
   
   return (
     jsx(
-RadixThemesButton,
-{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_95307ee4ebaabb0c4173c9e3b08a1d5f},
-jsx(LucideCalculator,{},)
-,"Calcular de PM"
+RadixThemesText,
+{as:"p",className:"text-2xl font-bold text-gray-900 dark:text-white",size:"5"},
+"Total de PM es: "
+,reflex___state____state__time_tomato____time_tomato____numero_velocidad.totalTomato_rx_state_
+," palabras por minuto"
 ,)
   )
 }
@@ -106,28 +111,23 @@ function Debounceinput_320282388889533641019839164278055734316 () {
   )
 }
 
-function Fragment_167616900843178496352053926726151677768 () {
+function Button_148675033439856330813843604268037391211 () {
   
-  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
 
 
+  const on_click_95307ee4ebaabb0c4173c9e3b08a1d5f = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.calcTomato", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
 
 
 
   
   return (
     jsx(
-Fragment,
-{},
-(reflex___state____state__time_tomato____time_tomato____numero_velocidad.numVisible_rx_state_ ? (jsx(
-Fragment,
-{},
-jsx(Text_126231349361336532617190520851657233133,{},)
-,)) : (jsx(
-Fragment,
-{},
-jsx(RadixThemesSeparator,{size:"4"},)
-,))),)
+RadixThemesButton,
+{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_95307ee4ebaabb0c4173c9e3b08a1d5f},
+jsx(LucideCalculator,{},)
+,"Calcular de PM"
+,)
   )
 }
 
