@@ -1,31 +1,12 @@
 
 
-import { Fragment, lazy, useContext, useEffect } from "react"
+import { Fragment, useEffect } from "react"
 import { Box as RadixThemesBox, Container as RadixThemesContainer, Flex as RadixThemesFlex, Link as RadixThemesLink, Strong as RadixThemesStrong, Text as RadixThemesText } from "@radix-ui/themes"
 import { Link as ReactRouterLink } from "react-router"
-import { ClientSide, StateContexts } from "$/utils/context"
+import { Moment_235933936650578221533984834988403289858 } from "$/utils/stateful_components"
 import { jsx } from "@emotion/react"
 
-const Moment = ClientSide(lazy(() => import('react-moment')))
 
-
-function Moment_235933936650578221533984834988403289858 () {
-  
-  const reflex___state____state__time_tomato___components___footer_down____moment_state = useContext(StateContexts.reflex___state____state__time_tomato___components___footer_down____moment_state)
-
-
-
-
-
-  
-  return (
-    jsx(
-Moment,
-{format:"YYYY"},
-reflex___state____state__time_tomato___components___footer_down____moment_state.date_now_rx_state_
-,)
-  )
-}
 
 export default function Component() {
     
@@ -81,7 +62,8 @@ RadixThemesStrong,
 {},
 "TimeTomato"
 ,)," es una herramienta inteligente que te ayuda a administrar tu tiempo de forma eficiente utilizando la t\u00e9cnica Pomodoro. Divide tu trabajo en intervalos enfocados con pausas regulares para mejorar tu concentraci\u00f3n, reducir la fatiga mental y aumentar tu productividad."
-,),jsx(
+,),jsx("img",{alt:"acerca de timetomato",className:"bg-linear-to-r from-cyan-500 to-blue-400",css:({ ["width"] : "200px", ["height"] : "auto", ["borderRadius"] : "15px", ["borderWidth"] : "medium" }),src:"/images/acerca_de.png"},)
+,jsx(
 RadixThemesText,
 {as:"p",className:"mb-2"},
 "Ideal para estudiantes, profesionales, freelancers o cualquier persona que quiera aprovechar mejor su tiempo, TimeTomato ofrece una experiencia clara, simple y efectiva."

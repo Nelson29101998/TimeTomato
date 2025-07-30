@@ -10,7 +10,7 @@ import { Link as ReactRouterLink } from "react-router"
 import RadixThemesColorModeProvider from "$/components/reflex/radix_themes_color_mode_provider"
 import { Theme as RadixThemesTheme } from "@radix-ui/themes"
 import theme from "$/utils/theme"
-import { DefaultOverlayComponents, MemoizedToastProvider } from "$/utils/components"
+import { DefaultOverlayComponents, MemoizedBadge, MemoizedToastProvider } from "$/utils/components"
 
 
 import { EventLoopProvider, StateProvider, defaultColorMode } from "$/utils/context";
@@ -61,6 +61,7 @@ jsx(MemoizedToastProvider,{},)
 Fragment,
 {},
 children
+,jsx(MemoizedBadge,{},)
 ,),),),),),),)
   )
 }

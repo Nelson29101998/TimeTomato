@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/</loc>
+    <loc>https://timetomato-teal-book.reflex.run/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/acerca-de</loc>
+    <loc>https://timetomato-teal-book.reflex.run/acerca-de</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/acercade</loc>
+    <loc>https://timetomato-teal-book.reflex.run/acercade</loc>
   </url>
 </urlset>

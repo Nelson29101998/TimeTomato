@@ -1,16 +1,36 @@
 
 
-import { Fragment, lazy, useCallback, useContext, useEffect } from "react"
+import { Fragment, useCallback, useContext, useEffect } from "react"
 import { Box as RadixThemesBox, Button as RadixThemesButton, Container as RadixThemesContainer, Flex as RadixThemesFlex, Heading as RadixThemesHeading, Link as RadixThemesLink, Separator as RadixThemesSeparator, Text as RadixThemesText, TextField as RadixThemesTextField } from "@radix-ui/themes"
 import { Link as ReactRouterLink } from "react-router"
 import { BookOpenText as LucideBookOpenText, BrushCleaning as LucideBrushCleaning, Calculator as LucideCalculator, ClockFading as LucideClockFading } from "lucide-react"
 import DebounceInput from "react-debounce-input"
-import { ClientSide, EventLoopContext, StateContexts } from "$/utils/context"
+import { EventLoopContext, StateContexts } from "$/utils/context"
 import { Event, isNotNullOrUndefined, isTrue } from "$/utils/state"
+import { Moment_235933936650578221533984834988403289858 } from "$/utils/stateful_components"
 import { jsx } from "@emotion/react"
 
-const Moment = ClientSide(lazy(() => import('react-moment')))
 
+
+function Text_126231349361336532617190520851657233133 () {
+  
+  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
+
+
+
+
+
+  
+  return (
+    jsx(
+RadixThemesText,
+{as:"p",className:"text-2xl font-bold text-gray-900 dark:text-white",size:"5"},
+"Total de PM es: "
+,reflex___state____state__time_tomato____time_tomato____numero_velocidad.totalTomato_rx_state_
+," palabras por minuto"
+,)
+  )
+}
 
 function Debounceinput_3690120168595268452071926947729633368 () {
   
@@ -26,24 +46,6 @@ function Debounceinput_3690120168595268452071926947729633368 () {
   return (
     jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_fbe0f943aafa40fcb06f643a448fb628,placeholder:"Ingresa los tiempo...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.tiempoEmpleado_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.tiempoEmpleado_rx_state_ : "")},)
 
-  )
-}
-
-function Moment_235933936650578221533984834988403289858 () {
-  
-  const reflex___state____state__time_tomato___components___footer_down____moment_state = useContext(StateContexts.reflex___state____state__time_tomato___components___footer_down____moment_state)
-
-
-
-
-
-  
-  return (
-    jsx(
-Moment,
-{format:"YYYY"},
-reflex___state____state__time_tomato___components___footer_down____moment_state.date_now_rx_state_
-,)
   )
 }
 
@@ -64,6 +66,43 @@ RadixThemesButton,
 jsx(LucideCalculator,{},)
 ,"Calcular de PM"
 ,)
+  )
+}
+
+function Button_168819098048397515650389194883742876686 () {
+  
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  const on_click_782db8e8c5d5b8dab9a72b179b40e4bb = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.limpiar", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
+
+
+
+  
+  return (
+    jsx(
+RadixThemesButton,
+{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_782db8e8c5d5b8dab9a72b179b40e4bb},
+jsx(LucideBrushCleaning,{},)
+,"Limpiar"
+,)
+  )
+}
+
+function Debounceinput_320282388889533641019839164278055734316 () {
+  
+  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  const on_change_83c429918e6fd1767340a1fabcb6e4a8 = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.set_numeroPalabra", ({ ["value"] : _e["target"]["value"] }), ({  })))], [_e], ({  })))), [addEvents, Event])
+
+
+
+  
+  return (
+    jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_83c429918e6fd1767340a1fabcb6e4a8,placeholder:"Ingresa los n\u00fameros...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_ : "")},)
+
   )
 }
 
@@ -89,63 +128,6 @@ Fragment,
 {},
 jsx(RadixThemesSeparator,{size:"4"},)
 ,))),)
-  )
-}
-
-function Debounceinput_320282388889533641019839164278055734316 () {
-  
-  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  const on_change_83c429918e6fd1767340a1fabcb6e4a8 = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.set_numeroPalabra", ({ ["value"] : _e["target"]["value"] }), ({  })))], [_e], ({  })))), [addEvents, Event])
-
-
-
-  
-  return (
-    jsx(DebounceInput,{css:({ ["borderRadius"] : "10px" }),debounceTimeout:300,element:RadixThemesTextField.Root,onChange:on_change_83c429918e6fd1767340a1fabcb6e4a8,placeholder:"Ingresa los n\u00fameros...",type:"number",value:(isNotNullOrUndefined(reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_) ? reflex___state____state__time_tomato____time_tomato____numero_velocidad.numeroPalabra_rx_state_ : "")},)
-
-  )
-}
-
-function Text_126231349361336532617190520851657233133 () {
-  
-  const reflex___state____state__time_tomato____time_tomato____numero_velocidad = useContext(StateContexts.reflex___state____state__time_tomato____time_tomato____numero_velocidad)
-
-
-
-
-
-  
-  return (
-    jsx(
-RadixThemesText,
-{as:"p",className:"text-2xl font-bold text-gray-900 dark:text-white",size:"5"},
-"Total de PM es: "
-,reflex___state____state__time_tomato____time_tomato____numero_velocidad.totalTomato_rx_state_
-," palabras por minuto"
-,)
-  )
-}
-
-function Button_168819098048397515650389194883742876686 () {
-  
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  const on_click_782db8e8c5d5b8dab9a72b179b40e4bb = useCallback(((_e) => (addEvents([(Event("reflex___state____state.time_tomato____time_tomato____numero_velocidad.limpiar", ({  }), ({  })))], [_e], ({  })))), [addEvents, Event])
-
-
-
-  
-  return (
-    jsx(
-RadixThemesButton,
-{className:"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",onClick:on_click_782db8e8c5d5b8dab9a72b179b40e4bb},
-jsx(LucideBrushCleaning,{},)
-,"Limpiar"
-,)
   )
 }
 
@@ -199,12 +181,12 @@ RadixThemesFlex,
 {align:"center",className:"rx-Stack",direction:"column",gap:"3"},
 jsx(
 RadixThemesFlex,
-{className:"bg-linear-to-r from-cyan-500 to-blue-400",css:({ ["display"] : "flex", ["alignItems"] : "center", ["justifyContent"] : "center", ["borderRadius"] : "15px", ["borderWidth"] : "medium", ["width"] : "300" })},
-jsx("img",{alt:"logo de timetomato",css:({ ["height"] : "auto" }),src:"/images/logo.png"},)
+{css:({ ["display"] : "flex", ["alignItems"] : "center", ["justifyContent"] : "center" })},
+jsx("img",{alt:"titulo de timetomato",className:"bg-linear-to-r from-cyan-500 to-blue-400",css:({ ["width"] : "250px", ["height"] : "auto", ["borderRadius"] : "15px", ["borderWidth"] : "medium" }),src:"/images/logo.png"},)
 ,),jsx(
 RadixThemesFlex,
-{className:"shadow-xl/20",css:({ ["display"] : "flex", ["alignItems"] : "center", ["justifyContent"] : "center", ["borderWidth"] : "medium", ["width"] : "250" })},
-jsx("img",{alt:"logo de timetomato",css:({ ["height"] : "auto" }),src:"/images/tomateTiempo.jpeg"},)
+{css:({ ["display"] : "flex", ["alignItems"] : "center", ["justifyContent"] : "center" })},
+jsx("img",{alt:"logo de timetomato",className:"bg-linear-to-r from-cyan-500 to-blue-400",css:({ ["width"] : "300px", ["height"] : "auto", ["borderRadius"] : "15px", ["borderWidth"] : "medium" }),src:"/images/tomateTiempo.jpeg"},)
 ,),),),),jsx(
 RadixThemesContainer,
 {css:({ ["padding"] : "16px" }),size:"3"},
