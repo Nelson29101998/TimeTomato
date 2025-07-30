@@ -1,0 +1,1 @@
+import{a as r}from"./chunk-EF7DTUVF-C7L_SYUz.js";import{m as n,n as c,o as p,v as l,S as f,y as i}from"./link-C5fP_FHu.js";const S={...p,...c,...n},d=r.forwardRef((s,t)=>{const{asChild:a,className:o,...e}=l(s,S),m=a?f:"strong";return r.createElement(m,{...e,ref:t,className:i("rt-Strong",o)})});d.displayName="Strong";export{d as r};
